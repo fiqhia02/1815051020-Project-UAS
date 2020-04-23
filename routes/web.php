@@ -17,7 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 route::get('/index','PetugasController@index') ->name('index');
 route::get('/Petugas/create','PetugasController@create') ->name('Petugas.create');
 route::post('/Petugas/store','PetugasController@store') ->name('Petugas.store');
@@ -26,8 +25,5 @@ route::get('/Petugas/edit/{Id_petugas}','PetugasController@edit') ->name('Petuga
 route::get('/Petugas/destroy/{Id_petugas}','PetugasController@destroy') ->name('Petugas.destroy');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PetugasController@index')->name('home');
+Route::get('/ppl', 'pplController@index')->name('ppl');
